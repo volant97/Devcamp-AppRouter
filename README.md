@@ -46,4 +46,32 @@
 
 ### TIL
 
-**Next.js**
+**Next.js Page Router**
+
+- 기존 프로젝트를 진행할 때 App Router를 주로 다뤄서 Page Router의 이해가 부족했다. 이번 기회에 Page Router를 제대로 익힐 수 있었다.
+
+**pages/index.tsx**
+
+- react-hook-form의 useForm을 활용한 코드를 살펴봤다.
+- form.watch()를 통해 작성한 form 정보를 확인할 수 있다.
+- alert(JSON.stringify(data, null, 4))
+  - JSON.stringify의 옵션에 대해서 살펴보았다.
+  - value(필수) : JSON 문자열로 변환할 값
+  - replacer(선택) : 함수 또는 배열이 될 수 있다. 이 값이 null 이거나 제공되지 않으면, 객체의 모든 속성들이 JSON 문자열 결과에 포함된다.
+  - space(선택) : 가독성을 목적으로 JSON 문자열 출력에 공백을 삽입하는 데 사용되는데, string이나 number 객체가 될 수 있다. 이 값이 null 이거나, 제공되지 않으면 공백이 사용되지 않는다.
+- motion.div에서 step 값에 따른 animate(translateX) 변화로 슬라이드 애니메이션 구현
+- Button에서 step 값에 따라 hidden 처리
+- form.trigger를 활용한 유효성 검사 실패했을 때 오류 문구 출력
+
+  - 빨간색 문구와 아래 오류 문구 출력 원리를 정확히 파악하지 못했다.
+
+**validators/auth.ts**
+
+- zod를 활용한 유효성 검사를 살펴보았다. registerSchema를 선언하고 z.object 안에 각 요소의 유효성 조건이 정의되어 있다.
+- 기존 유효성 검사를 할 때 매우 긴 코드로 인해서 관리하기 힘들었는데, zod를 활용하니까 한 눈에 파악이 가능하고 min, max, refine 등 조건을 설정하는 것도 수월하다. 그리고 에러 메시지도 바로 작성할 수 있다.
+
+**components/ui**
+
+- button, card, input 등 다양한 컴포넌트가 있다.
+- 공통 컴포넌트를 간단하게만 제작해서 사용해봤는데, 예제 코드처럼 깊게 만들어보진 못했다.
+- cva, tailwindmerge, clsx 등을 조합하여 재사용 가능한 UI 제작하는 방법을 더 학습해야겠다.
